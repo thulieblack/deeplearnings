@@ -1,1 +1,1 @@
-Notebooks on my journey learning DeepLearning
+Example notebooks of my journey learning Deep-Learning.
