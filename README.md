@@ -1,1 +1,1 @@
-Example notebooks of my journey learning Deep-Learning.
+This Repo contains example notebooks of my journey learning Deep Learning.
