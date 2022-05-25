@@ -1,1 +1,2 @@
-This Repo contains example notebooks of my journey learning Deep Learning.
+This Repo contains a compilation of all the example notebooks that i have used to upskill and learn more about Deep Learning.
+
