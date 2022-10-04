@@ -8,11 +8,10 @@ Each framework has a generate method for auto-regressive text generation impleme
 
 ## GenerationMixin
 
-[[autodoc]] generation_utils.GenerationMixin
 
-##### generate
+#### Generate
 
-Generates sequences of token ids for models with a language modeling head. The method supports the following generation methods for text-decoder, text-to-text, speech-to-text, and vision-to-text models:
+Text generation produces/creates a sequence of token ids for models with a language modeling head. It supports the following generation methods for text-decoder, text-to-text, speech-to-text, and vision-to-text models:
 
 - _`greedy decoding`_ by calling `greedy_search()` if `num_beams=1` and `do_sample=False`.
 - _`multinomial sampling`_ by `calling sample()` if `num_beams=1` and `do_sample=True`.
@@ -22,10 +21,10 @@ Generates sequences of token ids for models with a language modeling head. The m
 - _`constrained beam-search decoding`_ by calling `constrained_beam_search()`, if `constraints!=None` or `force_words_ids!=None`.
 
 
-Apart from `inputs`, all the arguments below will default to the value of the attribute of the same name as defined in the model’s config `(config.json)` which in turn defaults to the [`PretrainedConfig`] of the model.
+Apart from the `inputs`, all arguments below will default to the value of the attribute with the same name as defined in the model’s config `(config.json)` which in turn defaults to the [`PretrainedConfig`] of the model.
 
 
-Most of these parameters are explained in more detail in [this blog post](https://huggingface.co/blog/how-to-generate).
+Most of these parameters are detailed more in [this blog post](https://huggingface.co/blog/how-to-generate).
 
 
 Here are some examples:
@@ -88,11 +87,11 @@ tokenizer.batch_decode(outputs, skip_special_tokens=True)
 ```python
 ['Paris ist eines der dichtesten besiedelten Gebiete Europas.']
 ```
-##### greedy_search
+#### Greedy_search
 
-Generates sequences of token ids for models with a language modeling head using **greedy decoding** and can be used for text-decoder, text-to-text, speech-to-text, and vision-to-text models.
+The sequences of token ids for models are generated using the **greedy decoding** language modeling head. 
 
-#### Example
+Below is an example:
 
 ```python
 from transformers import (
@@ -130,12 +129,12 @@ tokenizer.batch_decode(outputs, skip_special_tokens=True)
 ```python
 ["It might be possible to get a better understanding of the nature of the problem, but it's not"]
 ```
-##### sample
+#### Sample
 
 
-Generates sequences of token ids for models with a language modeling head using **multinomial sampling** and can be used for text-decoder, text-to-text, speech-to-text, and vision-to-text models.
+Samples utilise the **multinominal sampling** language modelling head to generate sequences of token ids. 
 
-#### Example
+Here is an example:
 
 ```python
 from transformers import (
@@ -188,11 +187,11 @@ tokenizer.batch_decode(outputs, skip_special_tokens=True)
 ```python
 ['Today is a beautiful day, and a wonderful day.\n\nI was lucky enough to meet the']
 ```
-##### beam_search
+#### Beam_search
 
-Generates sequences of token ids for models with a language modeling head using **beam search decoding** and can be used for text-decoder, text-to-text, speech-to-text, and vision-to-text models.
+Sequences of token ids are generated for models with a language modeling head using **beam search decoding** .
 
-#### Example
+Below is an example:
 
 ```python
 from transformers import (
@@ -248,7 +247,11 @@ tokenizer.batch_decode(outputs, skip_special_tokens=True)
 ```
 
 [[autodoc]] beam_sample
+
+
 [[autodoc]] group_beam_search
+
+
 [[autodoc]] constrained_beam_search
 
 ## TFGenerationMixin
